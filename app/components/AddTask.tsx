@@ -3,17 +3,30 @@ import { AiOutlinePlus } from "react-icons/ai";
 import Modal from "./Modal";
 import { FormEventHandler, useState } from "react";
 import { addNewTodo } from "@/api/api";
+import { ITask } from "@/types/task";
+import { v4 as uuidv4 } from "uuid";
 
-const AddTask = () => {
+interface AddTaskProps {
+  onAddTask: (task: ITask) => void;
+}
+
+const AddTask: React.FC<AddTaskProps> = ({ onAddTask }) => {
   const [modalOpen, setOpenModal] = useState<boolean>(false);
   const [newTaskValue, setNewTaskValue] = useState<string>("");
 
   const handleSubmitNewTodo: FormEventHandler = async (e) => {
     e.preventDefault();
-    await addNewTodo({
-      id: "3",
+
+    const newTask = {
+      id: uuidv4(),
       text: newTaskValue,
-    });
+    };
+
+    const addedTask = await addNewTodo(newTask); // Add the task to the server
+
+    // Update the parent component's state with the new task
+    onAddTask(addedTask);
+
     setNewTaskValue("");
     setOpenModal(false);
   };

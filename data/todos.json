@@ -1,33 +1,12 @@
 {
   "tasks": [
     {
-      "id": "1",
-      "text": "Buy milk with some oragne"
+      "id": "48311986-fbbe-4215-8daf-f188414c000a",
+      "text": "Hello Mrs.John"
     },
     {
-      "id": "2",
-      "text": "Help my friend to find a car!"
-    },
-    {
-      "id": "a940",
-      "todo": {
-        "id": "3",
-        "text": "go to gym"
-      }
-    },
-    {
-      "id": "67d9",
-      "todo": {
-        "id": "3",
-        "text": "Go to gym"
-      }
-    },
-    {
-      "id": "7353",
-      "todo": {
-        "id": "3",
-        "text": "Heloo"
-      }
+      "id": "5ffed6f0-1b6c-42d0-b2eb-8b79fade90c5",
+      "text": "Hello"
     }
   ]
 }
